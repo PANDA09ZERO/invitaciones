@@ -1,0 +1,88 @@
+
+    :root{
+      --bg: #faf7f5;
+      --paper:#ffffff;
+      --ink:#2b2b2b;
+      --muted:#6b6b6b;
+      --primary:#b46b74; /* rosa envejecido */
+      --primary-2:#8f5159;
+      --ring: rgba(180,107,116,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    a{color:var(--primary);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Layout */
+    .container{max-width:1100px;margin-inline:auto;padding:24px}
+    .card{background:var(--paper);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.06);overflow:hidden}
+
+    /* Hero */
+    .hero{position:relative;min-height:72vh;display:grid;place-items:center;background:#000}
+    .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.6)}
+    .hero .content{position:relative;text-align:center;color:#fff;padding:40px}
+    .names{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(36px,6vw,64px);letter-spacing:.5px}
+    .date{font-size:clamp(16px,2.5vw,20px);opacity:.95;margin-top:8px}
+    .cta-row{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{appearance:none;border:0;border-radius:999px;padding:12px 20px;font-weight:600;cursor:pointer;background:var(--primary);color:#fff;box-shadow:0 6px 20px rgba(180,107,116,.35);transition:transform .15s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(180,107,116,.45)}
+    .btn.alt{background:#fff;color:var(--primary)}
+
+    /* Countdown */
+    .countdown{display:flex;gap:14px;justify-content:center;margin-top:22px}
+    .cd-box{min-width:78px;background:rgba(255,255,255,.12);backdrop-filter: blur(3px);padding:10px 12px;border-radius:12px;text-align:center}
+    .cd-num{font-family:"Playfair Display",serif;font-size:28px;font-weight:700}
+    .cd-label{font-size:12px;opacity:.9}
+
+    /* Sections */
+    section{padding:56px 0}
+    h2.section-title{font-family:"Playfair Display",serif;font-size:32px;text-align:center;margin:0 0 24px;letter-spacing:.3px}
+    .lead{text-align:center;color:var(--muted);max-width:800px;margin:0 auto 28px}
+
+    /* Cards grid */
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+    .info-card{background:var(--paper);border-radius:14px;padding:22px;border:1px solid #eee}
+    .info-card h3{margin:0 0 6px;font-family:"Playfair Display",serif}
+    .info-card p{margin:0;color:var(--muted)}
+
+    /* Timeline */
+    .timeline{display:grid;gap:14px;max-width:760px;margin:0 auto}
+    .t-item{display:flex;gap:12px;align-items:flex-start;background:var(--paper);border:1px solid #eee;padding:16px;border-radius:12px}
+    .t-time{font-weight:700;color:var(--primary)}
+
+    /* Gallery */
+    .gallery{display:grid;gap:10px;grid-template-columns:repeat(4,1fr)}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:10px}
+
+    /* RSVP */
+    .rsvp{display:grid;gap:14px;max-width:680px;margin:0 auto}
+    .field{display:grid;gap:6px}
+    .input, .select, textarea{
+      padding:12px 14px;border-radius:10px;border:1px solid #e6e6e6;background:#fff;font:inherit;outline:0
+    }
+    .input:focus, .select:focus, textarea:focus{box-shadow:0 0 0 4px var(--ring);border-color:var(--primary)}
+
+    /* Footer */
+    footer{padding:30px 0;color:#777;text-align:center}
+
+    /* Sticky mini nav */
+    .mini-nav{position:sticky;top:0;background:rgba(250,247,245,.7);backdrop-filter:blur(8px);border-bottom:1px solid #eee;z-index:20}
+    .mini-wrap{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding:10px}
+    .chip{border:1px solid #e5d4d7;color:var(--primary);background:#fff;border-radius:999px;padding:8px 14px;font-weight:600}
+
+    /* Responsive */
+    @media (max-width: 992px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width: 640px){
+      .grid{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .hero{min-height:64vh}
+    }

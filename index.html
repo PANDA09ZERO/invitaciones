@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invitación de Boda — Fabiola & Jhon</title>
+  <meta name="description" content="Invitación de boda: Sofía & Mateo. Acompáñanos a celebrar nuestro amor.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- llama a css-->
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero card">
+    <!-- Reemplaza la imagen de fondo -->
+    <img class="bg" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=2070&auto=format&fit=crop" alt="Fondo romántico">
+    <div class="content container">
+      <div class="names">Fabiola & Jhon</div>
+      <div class="date">Sábado, 27 de Noviembre de 2025 — Lima, Perú</div>
+      <div class="countdown" id="countdown" aria-live="polite"></div>
+      <div class="cta-row">
+        <a class="btn" href="#rsvp">Confirmar asistencia</a>
+        <a class="btn alt" href="#detalles">Ver detalles</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MINI NAV -->
+  <div class="mini-nav">
+    <div class="mini-wrap container">
+      <a class="chip" href="#detalles">Detalles</a>
+      <a class="chip" href="#galeria">Galería</a>
+      <a class="chip" href="#ubicacion">Ubicación</a>
+    </div>
+  </div>
+
+  <!-- DETALLES -->
+  <section id="detalles" class="container">
+    <h2 class="section-title">¡Nos casamos!</h2>
+    <p class="lead">Con mucha alegría, queremos que nos acompañes en el día en que unimos nuestras vidas. Aquí encontrarás toda la información importante para celebrar con nosotros.</p>
+
+    <div class="grid">
+      <div class="info-card">
+        <h3>Ceremonia</h3>
+        <p>Parroquia Santa María — 4:00 p.m.</p>
+      </div>
+      <div class="info-card">
+        <h3>Recepción</h3>
+        <p>Hacienda Los Olivos, Km 12 — 6:30 p.m.</p>
+      </div>
+      <div class="info-card">
+        <h3>Código de Vestimenta</h3>
+        <p>Formal — Colores neutros o pasteles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ITINERARIO -->
+  <section id="itinerario" class="container">
+    <h2 class="section-title">Itinerario</h2>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-time">16:00</div>
+        <div>Ceremonia religiosa y votos.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-time">18:30</div>
+        <div>Ingreso de los novios y brindis.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-time">19:30</div>
+        <div>Cena y primer baile.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="container">
+    <h2 class="section-title">Nuestra historia en fotos</h2>
+    <p class="lead">Un vistazo a algunos momentos que nos trajeron hasta aquí.</p>
+    <div class="gallery">
+      <img src="img/img1.jpg" alt="Foto 1">
+      <img src="img/img2.jpg" alt="Foto 2">
+      <img src="img/img3.jpg" alt="Foto 3">
+      <img src="img/img4.jpg" alt="Foto 4">
+      <img src="img/img5.jpg" alt="Foto 5">
+      <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=2070&auto=format&fit=crop" alt="Foto 6">
+      <img src="https://images.unsplash.com/photo-1558222217-0d96f36cc3f0?q=80&w=2069&auto=format&fit=crop" alt="Foto 7">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1940&auto=format&fit=crop" alt="Foto 8">
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp" class="container">
+    <h2 class="section-title">Confirma tu asistencia</h2>
+    <p class="lead">Por favor confirma antes del 20 de octubre. ¡Tu presencia es nuestro mejor regalo!</p>
+
+    <form class="rsvp card" onsubmit="handleRSVP(event)">
+      <div style="display:grid;gap:14px;padding:22px">
+        <div class="field">
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" class="input" required placeholder="Tu nombre" />
+        </div>
+        <div class="field" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div>
+            <label for="email">Correo</label>
+            <input id="email" type="email" class="input" required placeholder="tu@email.com" />
+          </div>
+          <div>
+            <label for="acompanantes">Acompañantes</label>
+            <select id="acompanantes" class="select">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="mensaje">Mensaje (opcional)</label>
+          <textarea id="mensaje" rows="3" placeholder="Alguna restricción alimentaria o nota para los novios"></textarea>
+        </div>
+        <button class="btn" type="submit">Enviar confirmación</button>
+        <p id="rsvp-msg" class="lead" style="margin:0;display:none">¡Gracias! Hemos recibido tu confirmación. 💌</p>
+        <!--
+          👉 Si prefieres usar Google Forms, reemplaza el <form> por un <a class="btn" href="URL_DE_TU_FORMULARIO" target="_blank">Responder en Google Forms</a>
+        -->
+      </div>
+    </form>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section id="ubicacion" class="container">
+    <h2 class="section-title">¿Cómo llegar?</h2>
+    <p class="lead">Rio Chincha — Abre el mapa para indicaciones.</p>
+    <div class="card" style="overflow:hidden;border-radius:16px">
+      <!-- Reemplaza el src del iframe por el de tu lugar -->
+      <iframe title="Mapa de la boda" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.267927028303!2d-77.04279382387317!3d-12.092118888114168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8be9c8a3db1%3A0x7d1c6f4d9f2b2b57!2sParroquia!5e0!3m2!1ses!2spe!4v1700000000000" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    Hecho con ♥ por los novios — #Fabiola&Jhon
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
