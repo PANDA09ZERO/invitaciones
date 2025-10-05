@@ -1,151 +1,520 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Invitación de Boda — Fabiola & Jhon</title>
-  <meta name="description" content="Invitación de boda: Sofía & Mateo. Acompáñanos a celebrar nuestro amor.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <!-- llama a css-->
-   <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación de Boda — Fabiola & Jhon</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg-color:#e1dcae6b;      /* Fondo general */
+  --text-color:#000000;     /* Texto principal */
+  --accent-color:#909f63d0;   /* Bordes, hover y acentos */
+  --light-color:#FFFFFF;     /* Fondos claros, tarjetas e imágenes */
+  --btn-shadow:rgba(0,0,0,0.2);
+  --border-radius:12px;
+}
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+body, html{
+  height:100%;
+  width:100%;
+  font-family:'Inter',sans-serif;
+  scroll-behavior:smooth;
+  background:var(--bg-color);
+  color:var(--text-color);
+}
+a{text-decoration:none;color:var(--accent-color);}
+section{padding:50px 0;}
+
+/* CONTENEDOR */
+.container{max-width:900px;margin:0 auto;padding:0 20px;}
+h2.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:2.5em;
+  text-align:center;
+  margin-bottom:1.5em;
+  color:var(--accent-color);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.5em;
+  text-align:center;
+  margin-bottom:1.5em;
+  color:var(--text-color);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+.card-style{
+  background:var(--light-color);
+  padding:25px;
+  border-radius:var(--border-radius);
+  box-shadow:0 6px 15px rgba(0,0,0,0.1);
+  border: 1px solid var(--accent-color);
+}
+
+/* PORTADA */
+.portada{
+  width:90%;
+  max-width:450px;
+  margin:40px auto;
+  text-align:center;
+  padding:40px 30px;
+  background:var(--light-color);
+  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  animation:fadeIn 1.2s ease-in-out;
+  border: 2px solid var(--accent-color);
+  border-radius: var(--border-radius);
+}
+.floral{opacity:0.8;width:120px;transition:transform 0.4s ease,opacity 0.3s ease;}
+.floral img{width:100%;display:block;}
+.floral-top{margin-bottom:8px;transform:rotate(-3deg);}
+.floral-bottom{margin:12px 0 30px;transform:rotate(3deg);}
+.title{
+  font-family:'Great Vibes',cursive;
+  font-size:4.5rem;
+  color:var(--accent-color);
+  margin-bottom:-10px;
+}
+.subtitle{
+  font-family:'Playfair Display',serif;
+  font-size:2.5em;
+  text-align:center;
+  margin-bottom:1.5em;
+  color:var(--accent-color);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+.buttons{width:100%;display:flex;flex-direction:column;gap:12px;margin-top:20px;}
+.btn{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:1rem;
+  padding:14px 25px;
+  border:none;
+  border-radius:var(--border-radius);
+  cursor:pointer;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  transition:all 0.35s ease;
+  background-color:var(--accent-color);
+  color:var(--light-color);
+  box-shadow:0 4px 10px var(--btn-shadow);
+}
+.btn:hover{
+  background-color:#000000;
+  transform:translateY(-2px);
+  box-shadow:0 6px 12px var(--btn-shadow);
+}
+@keyframes fadeIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+
+/* HERO INVITACIÓN */
+.hero{
+  position:relative;
+  text-align:center;
+  color:var(--light-color);
+  height:80vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  border-radius:var(--border-radius);
+  max-width:900px;
+  margin:40px auto;
+  padding:0 20px;
+}
+.hero .bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(50%);
+  border-radius:var(--border-radius);
+}
+.hero .content{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:20px;
+  background:rgba(255,255,255,0.15);
+  border-radius:var(--border-radius);
+}
+.names{
+  font-family:'Playfair Display',serif;
+  font-size:4em;
+  margin-bottom:0.1em;
+  text-shadow:2px 2px 8px rgba(0,0,0,0.2);
+  font-style:italic;
+  font-weight:400;
+  color:var(--accent-color);
+}
+.date{
+  font-family:'Inter',sans-serif;
+  font-size:1.2em;
+  opacity:0.9;
+  text-shadow:1px 1px 4px rgba(0,0,0,0.2);
+  font-weight:600;
+}
+.cta-row{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap;justify-content:center;}
+.btn.alt{
+  background:transparent;
+  border:2px solid var(--light-color);
+  color:var(--light-color);
+  box-shadow:none;
+}
+.btn.alt:hover{
+  background:rgba(255,255,255,0.1);
+  box-shadow:none;
+  transform:translateY(-2px);
+}
+
+/* MINI NAV */
+.mini-nav{
+  margin:20px 0;
+  text-align:center;
+  background:var(--bg-color);
+  padding:15px 0;
+  box-shadow:0 2px 5px rgba(0,0,0,0.05);
+  border-bottom: 2px solid var(--accent-color);
+}
+.mini-wrap a{
+  display:inline-block;
+  padding:8px 16px;
+  margin:0 4px;
+  transition:0.3s;
+  color:var(--text-color);
+  font-weight:600;
+  border-bottom:3px solid transparent;
+}
+.mini-wrap a:hover{
+  color:var(--accent-color);
+  border-bottom:3px solid var(--accent-color);
+}
+
+/* SECCIONES */
+.grid{
+  display:grid;
+  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+.info-card{
+  padding:25px;
+  background:var(--light-color);
+  text-align:center;
+  transition:transform .3s,box-shadow .3s;
+  border-radius:var(--border-radius);
+  border-left: 5px solid var(--accent-color);
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+.info-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.4em;
+  margin-bottom:0.5em;
+  color:var(--accent-color);
+}
+.info-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,0.1);}
+
+/* VERSÍCULOS */
+#versiculos p{
+  font-family:'Playfair Display',serif;
+  font-size:1.3em;
+  font-style:italic;
+  text-align:center;
+  max-width:700px;
+  margin:0 auto;
+  padding:30px;
+  border-top:2px solid var(--accent-color);
+  border-bottom:2px solid var(--accent-color);
+  color:var(--text-color);
+}
+
+/* ITINERARIO */
+.timeline{
+  max-width:600px;
+  margin:20px auto;
+  position:relative;
+  padding:20px 0;
+}
+.timeline::before{
+  content:'';position:absolute;left:50%;width:2px;height:100%;background:var(--accent-color);transform:translateX(-50%);
+}
+.t-item{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:25px;
+  position:relative;
+  font-family:'Inter',sans-serif;
+  padding:10px;
+}
+.t-item:nth-child(even){flex-direction:row-reverse;text-align:right;}
+.t-item::after{
+  content:'';position:absolute;left:50%;top:18px;width:12px;height:12px;border-radius:50%;background:var(--accent-color);border:2px solid var(--light-color);transform:translateX(-50%);z-index:1;
+}
+.t-time{font-weight:bold;color:var(--accent-color);width:100px;text-transform:uppercase;font-size:1.1em;margin-top:3px;}
+.t-item > div:last-child{width:calc(50% - 70px);}
+
+/* GALERÍA */
+.gallery {
+  column-count: 3;      /* Número de columnas */
+  column-gap: 10px;     /* Espacio entre columnas */
+  padding: 20px;
+  background: var(--bg-color);
+  border-radius: var(--border-radius);
+}
+
+.gallery img {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;  /* Espacio vertical entre imágenes */
+  border-radius: var(--border-radius);
+  object-fit: cover;     /* Ajusta sin deformar */
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@media(max-width:768px){ .gallery { column-count: 2; } }
+@media(max-width:480px){ .gallery { column-count: 1; } }
+
+/* RSVP */
+.rsvp.card{
+  background:var(--light-color);
+  border-radius:var(--border-radius);
+  box-shadow:0 8px 25px rgba(0,0,0,0.1);
+  padding:30px;
+  display:grid;
+  gap:15px;
+  max-width:500px;
+  margin:0 auto;
+  border-top:5px solid var(--accent-color);
+}
+.rsvp .input,.rsvp select,.rsvp textarea{
+  width:100%;
+  padding:12px;
+  border-radius:4px;
+  border:1px solid var(--accent-color);
+  outline:none;
+  font-family:'Inter',sans-serif;
+  font-size:1em;
+  transition:border-color 0.3s;
+}
+.rsvp .input:focus,.rsvp select:focus,.rsvp textarea:focus{border-color:var(--accent-color);}
+.rsvp button{margin-top:10px;width:100%;}
+
+/* UBICACIÓN */
+#ubicacion .card{
+  background:var(--light-color);
+  padding:15px;
+  border-radius:var(--border-radius);
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* CÓDIGO DE VESTIMENTA */
+#Codigo {
+  background: var(--bg-color);
+  padding: 40px 20px;
+  border-radius: 16px;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 800px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  border: 2px solid var(--accent-color);
+}
+
+#Codigo p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.img-vestimenta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.img-vestimenta img {
+  width: 200px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 3px solid var(--accent-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--light-color);
+}
+
+.img-vestimenta img:hover {
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  border-color: #000000;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  background:var(--accent-color);
+  color:var(--light-color);
+  font-size:0.9em;
+  margin-top:50px;
+  border-top-left-radius:var(--border-radius);
+  border-top-right-radius:var(--border-radius);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .timeline::before{left:12px;}
+  .t-item{flex-direction:column;text-align:left;align-items:flex-start;}
+  .t-item:nth-child(even){flex-direction:column;text-align:left;}
+  .t-item::after{left:10px;}
+  .t-time{width:auto;margin-left:20px;}
+  .t-item > div:last-child{width:100%;margin-left:20px;padding-top:5px;}
+}
+@media(max-width:480px){
+  .title{font-size:3.5rem;}
+  .subtitle{font-size:1.2rem;letter-spacing:4px;}
+  .names{font-size:3em;}
+  .btn{font-size:0.9rem;padding:12px 18px;}
+  .floral{width:80px;}
+  h2.section-title{font-size:2em;}
+}
+</style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero card">
-    <!-- Reemplaza la imagen de fondo -->
-    <img class="bg" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=2070&auto=format&fit=crop" alt="Fondo romántico">
-    <div class="content container">
-      <div class="names">Fabiola & Jhon</div>
-      <div class="date">Sábado, 27 de Noviembre de 2025 — Lima, Perú</div>
-      <div class="countdown" id="countdown" aria-live="polite"></div>
-      <div class="cta-row">
-        <a class="btn" href="#rsvp">Confirmar asistencia</a>
-        <a class="btn alt" href="#detalles">Ver detalles</a>
-      </div>
-    </div>
-  </header>
+<div class="portada fade-in">
+  <div class="floral floral-top"><img src="img/arregloFloral.png" alt="Flor superior"></div>
+  <h1 class="title">Nos</h1><br>
+  <h2 class="subtitle">Casamos</h2>
+  <div class="floral floral-bottom"><img src="img/arregloFloral.png" alt="Flor inferior"></div>
+  <div class="buttons">
+    <button class="btn" id="playMusic">REPRODUCIR MÚSICA</button>
+    <audio id="audio" src="mp3/cancionboda.mp3" preload="auto" loop></audio>
+    <a href="#rsvp" class="btn invitation">Confirmar asistencia</a>
+  </div>
+</div>
 
-  <!-- MINI NAV -->
-  <div class="mini-nav">
-    <div class="mini-wrap container">
-      <a class="chip" href="#detalles">Detalles</a>
-      <a class="chip" href="#galeria">Galería</a>
-      <a class="chip" href="#ubicacion">Ubicación</a>
+<section id="invitacion" class="hero fade-in">
+  <img class="bg" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=2070&auto=format&fit=crop" alt="Fondo romántico">
+  <div class="content">
+    <div class="names">Fabiola & Jhon</div>
+    <div class="date">SÁBADO, 10 DE ENERO DE 2026 — LIMA, PERÚ</div>
+  </div>
+</section>
+
+<nav class="mini-nav fade-in">
+  <div class="mini-wrap container">
+    <a href="#detalles">Detalles</a>
+    <a href="#galeria">Galería</a>
+    <a href="#versiculos">Versículos</a>
+    <a href="#Codigo">Codigo de vestimenta</a>
+  </div>
+</nav>
+
+<section id="detalles" class="fade-up">
+  <div class="container">
+    <h2 class="section-title">Detalles de la Boda</h2>
+    <div class="grid">
+      <div class="info-card"><h3>Padres</h3>Esposo : <p>Onesimo Vásquez Muñoz</p><p>Esther Gómez Salva</p><br>Esposa : <p>Eduardo Palomino Barrientos</p><p>Bertha Justil Vargas</p></div>
+      <div class="info-card"><h3>Padrinos</h3><p>Samuel Pablo Quispe torres</p><br><p>Ruth Valentina Dominguez Soncco de Quispe</p></div>
+      <div class="info-card"><h3>Ubicación</h3><p><a href="https://maps.app.goo.gl/sBhT32NLkShMtq2i9" target="_blank">Iglesia del Nazareno</a><br>
+      </p></div>
+      <div class="info-card"><h3>Número de cuenta para Regalos</h3><p>19191709009060</p><br>CCI: <br><p>00219119170900906050</p></div>
+      <div class="info-card"><h3>Código de vestimenta</h3><p>Elegante</p></div>
+      <div class="info-card"><h3>Día y hora</h3><p>Sábado, 10 de Enero de 2026 — 7:00 p.m.</p></div>
     </div>
   </div>
+</section>
 
-  <!-- DETALLES -->
-  <section id="detalles" class="container">
-    <h2 class="section-title">¡Nos casamos!</h2>
-    <p class="lead">Con mucha alegría, queremos que nos acompañes en el día en que unimos nuestras vidas. Aquí encontrarás toda la información importante para celebrar con nosotros.</p>
-
-    <div class="grid">
-      <div class="info-card">
-        <h3>Ceremonia</h3>
-        <p>Parroquia Santa María — 4:00 p.m.</p>
-      </div>
-      <div class="info-card">
-        <h3>Recepción</h3>
-        <p>Hacienda Los Olivos, Km 12 — 6:30 p.m.</p>
-      </div>
-      <div class="info-card">
-        <h3>Código de Vestimenta</h3>
-        <p>Formal — Colores neutros o pasteles.</p>
-      </div>
+<section id="versiculos" class="fade-up">
+  <div class="container">
+    <h2 class="section-title"></h2>
+    <p>"Más valen dos que uno, porque obtienen más fruto de su esfuerzo. Si caen, el uno levanta al otro.
+      ¡Ay del que cae y no tine quien lo levante! Si dos se acuestan juntos, entrarán en calor; uno solo ¿cómo va a calentarse? Uno solo puede ser vencido, pero dos pueden resistir. ¡La cuerda de tres hilos no se rompe fácilmente!" — Eclesiastés 4:9-12</p>
+  </div>
+</section>
+<section id="Codigo" class="fade-up">
+  <div class="container">
+    <h2 class="section-title">Código de vestimenta</h2>
+    <h3>Elegante</h3>
+    <div class="img-vestimenta">
+    <img src="img/codigoH.png" alt="Codigo de vestimenta">
+    <img src="img/codigoM.png" alt="Codigo de vestimenta">
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ITINERARIO -->
-  <section id="itinerario" class="container">
-    <h2 class="section-title">Itinerario</h2>
-    <div class="timeline">
-      <div class="t-item">
-        <div class="t-time">16:00</div>
-        <div>Ceremonia religiosa y votos.</div>
-      </div>
-      <div class="t-item">
-        <div class="t-time">18:30</div>
-        <div>Ingreso de los novios y brindis.</div>
-      </div>
-      <div class="t-item">
-        <div class="t-time">19:30</div>
-        <div>Cena y primer baile.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALERÍA -->
-  <section id="galeria" class="container">
+<section id="galeria" class="fade-up">
+  <div class="container">
     <h2 class="section-title">Nuestra historia en fotos</h2>
-    <p class="lead">Un vistazo a algunos momentos que nos trajeron hasta aquí.</p>
     <div class="gallery">
-      <img src="img/img1.jpg" alt="Foto 1">
-      <img src="img/img2.jpg" alt="Foto 2">
-      <img src="img/img3.jpg" alt="Foto 3">
-      <img src="img/img4.jpg" alt="Foto 4">
-      <img src="img/img5.jpg" alt="Foto 5">
-      <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=2070&auto=format&fit=crop" alt="Foto 6">
-      <img src="https://images.unsplash.com/photo-1558222217-0d96f36cc3f0?q=80&w=2069&auto=format&fit=crop" alt="Foto 7">
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1940&auto=format&fit=crop" alt="Foto 8">
+      <img src="img/IMG-20251002-WA0036.jpg" alt="">
+      <img src="img/IMG-20251002-WA0040.jpg" alt="">
+      <img src="img/IMG-20251002-WA0041.jpg" alt="">
+      <img src="img/IMG-20251002-WA0042.jpg" alt="">
+      <img src="img/IMG-20251002-WA0044.jpg" alt="">
+      <img src="img/IMG-20251002-WA0045.jpg" alt="">
+      <img src="img/IMG-20251002-WA0047.jpg" alt="">
+      <img src="img/IMG-20251002-WA0048.jpg" alt="">
+      <img src="img/IMG-20251002-WA0049.jpg" alt="">
+      <img src="img/IMG-20251002-WA0050.jpg" alt="">
+      <img src="img/IMG-20251002-WA0051.jpg" alt="">
+      <img src="img/IMG-20251002-WA0052.jpg" alt="">
+      <img src="img/IMG-20251002-WA0053.jpg" alt="">
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- RSVP -->
-  <section id="rsvp" class="container">
-    <h2 class="section-title">Confirma tu asistencia</h2>
-    <p class="lead">Por favor confirma antes del 20 de octubre. ¡Tu presencia es nuestro mejor regalo!</p>
 
-    <form class="rsvp card" onsubmit="handleRSVP(event)">
-      <div style="display:grid;gap:14px;padding:22px">
-        <div class="field">
-          <label for="nombre">Nombre completo</label>
-          <input id="nombre" class="input" required placeholder="Tu nombre" />
-        </div>
-        <div class="field" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div>
-            <label for="email">Correo</label>
-            <input id="email" type="email" class="input" required placeholder="tu@email.com" />
-          </div>
-          <div>
-            <label for="acompanantes">Acompañantes</label>
-            <select id="acompanantes" class="select">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label for="mensaje">Mensaje (opcional)</label>
-          <textarea id="mensaje" rows="3" placeholder="Alguna restricción alimentaria o nota para los novios"></textarea>
-        </div>
-        <button class="btn" type="submit">Enviar confirmación</button>
-        <p id="rsvp-msg" class="lead" style="margin:0;display:none">¡Gracias! Hemos recibido tu confirmación. 💌</p>
-        <!--
-          👉 Si prefieres usar Google Forms, reemplaza el <form> por un <a class="btn" href="URL_DE_TU_FORMULARIO" target="_blank">Responder en Google Forms</a>
-        -->
-      </div>
-    </form>
-  </section>
-
-  <!-- UBICACIÓN -->
-  <section id="ubicacion" class="container">
-    <h2 class="section-title">¿Cómo llegar?</h2>
-    <p class="lead">Rio Chincha — Abre el mapa para indicaciones.</p>
-    <div class="card" style="overflow:hidden;border-radius:16px">
-      <!-- Reemplaza el src del iframe por el de tu lugar -->
-      <iframe title="Mapa de la boda" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.267927028303!2d-77.04279382387317!3d-12.092118888114168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8be9c8a3db1%3A0x7d1c6f4d9f2b2b57!2sParroquia!5e0!3m2!1ses!2spe!4v1700000000000" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<section id="rsvp" class="fade-up">
+  <div class="container">
+    <h2 class="section-title">Confirmar asistencia</h2>
+    <div class="rsvp card">
+      <input class="input" type="text" placeholder="Nombre completo">
+      <input class="input" type="email" placeholder="Correo electrónico">
+      <select>
+        <option>Asistiré</option>
+        <option>No podré asistir</option>
+      </select>
+      <textarea placeholder="Mensaje para los novios"></textarea>
+      <button class="btn">Enviar</button>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    Hecho con ♥ por los novios — #Fabiola&Jhon
-  </footer>
+<footer>
+  &copy; 2025 Hecho con mucho amor por Fabiola & Jhon. </footer>
 
-  <script src="js/app.js"></script>
+<script>
+const audio = document.getElementById('audio');
+const playBtn = document.getElementById('playMusic');
+playBtn.addEventListener('click',()=>{
+  if(audio.paused){audio.play();playBtn.textContent="PAUSAR MÚSICA";}
+  else{audio.pause();playBtn.textContent="REPRODUCIR MÚSICA";}
+});
+</script>
+
 </body>
 </html>
